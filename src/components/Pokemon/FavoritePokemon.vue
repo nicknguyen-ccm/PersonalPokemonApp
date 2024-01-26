@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Pokemon } from '../../composable/getPokemon'
-import PokemonCard from './PokemonCard.vue'
 import PokemonList from './PokemonList.vue'
 const props = defineProps<{
   pokemon: Pokemon[] | undefined

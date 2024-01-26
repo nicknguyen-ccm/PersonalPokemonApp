@@ -1,6 +1,5 @@
 <template>
   <header></header>
-
   <RouterView v-slot="{ Component }" :key="$route.path">
     <KeepAlive>
       <component :is="Component" />

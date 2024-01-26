@@ -22,9 +22,6 @@ export type Pokemon = {
   // possibly add abilities and other things
 }
 
-//const error = ref(null)
-// is there an error type?
-
 export const getPokemon = (url: Ref<string>): Ref<Pokemon[] | null> => {
   const data = ref<Pokemon[] | null>([])
 
@@ -34,7 +31,6 @@ export const getPokemon = (url: Ref<string>): Ref<Pokemon[] | null> => {
     if (result.data.results == undefined) {
       // only one pokemon is returned
       result.data.imageUrl = imageUrl + result.data.id + '.png'
-
       data.value = [result.data]
     } else {
       // reformat data to fit pokemon data type

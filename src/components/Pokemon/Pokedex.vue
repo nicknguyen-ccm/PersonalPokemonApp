@@ -9,6 +9,7 @@ const props = defineProps<{
   page: number
   favorites: Set<number>
 }>()
+
 const emit = defineEmits(['pageChange', 'paginationChange', 'onLike'])
 const pokemonPagination = ref({ name: props.pagination.name, val: props.pagination.val })
 const isSearchedPokemon = computed(() => {
@@ -16,11 +17,13 @@ const isSearchedPokemon = computed(() => {
     return props.pokemon.length !== 1
   }
 })
+
 const disableButtons = computed(() => {
   if (props.pagination) {
     return props.pagination.name !== 'ALL'
   }
 })
+
 const addAllHandler = () => {
   props.pokemon.forEach((creature) => {
     if (!props.favorites.has(creature.id)) {
@@ -28,6 +31,7 @@ const addAllHandler = () => {
     }
   })
 }
+
 onMounted(() => {
   pokemonPagination.value = { name: props.pagination.name, val: props.pagination.val }
 })
