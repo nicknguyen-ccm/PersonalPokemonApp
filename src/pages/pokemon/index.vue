@@ -1,0 +1,1 @@
+<template>blankpage</template>
